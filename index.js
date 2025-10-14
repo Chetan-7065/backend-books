@@ -6,30 +6,6 @@ const app = express()
 app.use(express.json())
 initializeDatabase()
 
-//  {
-//   "title": "Lean In",
-//   "author": "Sheryl Sandberg",
-//   "publishedYear": 2012,
-//   "genre": ["Non-fiction", "Business"],
-//   "language": "English",
-//   "country": "United States",
-//   "rating": 4.1,
-//   "summary": "A book about empowering women in the workplace and achieving leadership roles.",
-//   "coverImageUrl": "https://example.com/lean_in.jpg"
-// };
-
-// {
-//   "title": "Shoe Dog",
-//   "author": "Phil Knight",
-//   "publishedYear": 2016,
-//   "genre": ["Autobiography", "Business"],
-//   "language": "English",
-//   "country": "United States",
-//   "rating": 4.5,
-//   "summary": "An inspiring memoir by the co-founder of Nike, detailing the journey of building a global athletic brand.",
-//   "coverImageUrl": "https://example.com/shoe_dog.jpg"
-// };
-
 app.get("/", (req, res) => {
   res.send("Hello, Express Server")
 })
@@ -198,7 +174,6 @@ async function updateBookByTitle(bookTitle, dataToUpdate){
   }
 }
 
-// updateBookByTitle("Shoe Dog", { "publishedYear": 2017, "rating": 4.2 })
 
 app.post("/books/title/:bookTitle" , async (req, res) => {
   try{
